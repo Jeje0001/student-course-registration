@@ -8,3 +8,11 @@ class Course:
         self.duration=duration
         self.students=[]
         self.capacity=capacity
+
+    def show_students(self):
+
+        if not self.students:
+            print("No Students is enrolled in this class")
+            return
+        for c in self.students:
+            print(c.name)

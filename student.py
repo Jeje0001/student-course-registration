@@ -8,6 +8,10 @@ class Student:
         self.courses=[]
 
     def enroll(self,course):
+
+        if course in self.courses:
+            print(f"{self.name} is already enrolled")
+            return
         if len(course.students) >= course.capacity:
             print(f"{course.name} is full")
         else:
@@ -21,4 +25,13 @@ class Student:
         else:
             print(f"{course.name} is not in your course list")
 
+
+    def show_courses(self):
+
+        if not self.courses:
+            print( "You are not enrolled in any courses")
+            return 
+
+        for c in self.courses:
+            print(c.name)
 
